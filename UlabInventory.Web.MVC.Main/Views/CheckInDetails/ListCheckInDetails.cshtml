@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ULABInventory.ViewModels.CheckInDetailsVM>
+@{
+    ViewBag.Title = "List CheckIn Details";
+}
+<div class="container">
+    <div class="section">
+        <h2>List CheckIn Details</h2>
+
+        <div style="width:90%; margin:0 auto;">
+            <table id="checkinDetails" class="table table-responsive table-bordered">
+                <thead>
+                <tr>
+                    @*<th><input name="select_all" value="1" type="checkbox"></th>*@
+                    <th>Device Code</th>
+                    <th>Item Name</th>
+                    <th>Item Model</th>
+                    <th>Item Brand</th>
+                    <th>Item Size</th>
+                    <th>Audit Code</th>
+                    <th>Invoice No</th>
+                    <th>Unit Price</th>
+                    <th>Warrant Expired Date</th>
+                    <th>Product Serial No</th>
+                    <th>Item Status</th>
+                    <th>Current Status</th>
+                    <th>Remarks</th>
+                </tr>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <style>
+            tr.even {
+                background-color: #F5F5F5 !important;
+            }
+        </style>
+    </div>
+</div>
+
+
+@section Scripts{
+<script src="~/App/checkInDetailsDatatable.js"></script>
+}
+
+

@@ -1,0 +1,51 @@
+﻿@model ULABInventory.Model.School
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.SchoolId, htmlAttributes:new {@Value="School"})
+    @Html.HiddenFor(model => model.PostedIp, htmlAttributes: new { @Value = "172" })
+    @Html.HiddenFor(model => model.PostedBy, htmlAttributes: new { @Value = "172" })
+    @Html.HiddenFor(model => model.PostedDate, htmlAttributes: new { @Value = "01/01/1982" })
+    @Html.HiddenFor(model => model.UpdatedIp, htmlAttributes: new { @Value = "172" })
+    @Html.HiddenFor(model => model.UpdatedBy, htmlAttributes: new { @Value = "172" })
+    @Html.HiddenFor(model => model.UpdatedDate, htmlAttributes: new { @Value = "01/01/1982" })
+    
+    <div class="form-horizontal">
+        <h4>Create School</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PriorityLevel, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PriorityLevel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PriorityLevel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

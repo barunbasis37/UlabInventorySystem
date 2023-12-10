@@ -1,0 +1,152 @@
+﻿@model IEnumerable<ULABInventory.Model.CheckInDetail>
+
+@{
+    ViewBag.Title = "Create Issue";
+}
+
+<div class="container">
+    <div class="master">
+        <h2>Issue Location</h2>
+        <table class="table table-responsive">
+            <tr class="cat-container">
+                <td>
+                    <select id="issueTypeId" class="issueTypeId form-control">
+                        <option>Select Issue Type</option>
+                    </select>
+                    <span class="error">Issue Type Required</span>
+                </td>
+                <td>
+                    <select id="departmentId" class="departmentId form-control" onchange="LoadEmpByDept(this)">
+                        <option>Select Department</option>
+                    </select>
+                    <span class="error">Department Required</span>
+                </td>
+                <td>
+                    <select id="employeeIdDept" class="employeeIdDept form-control">
+                        <option>Select Employee Id</option>
+                    </select>
+                    <span class="error">Employee Id Required</span>
+                </td>
+
+                <td>
+                    <select id="campusID" class="campusID form-control">
+                        <option>Select Campus</option>
+                    </select>
+                    <span class="error">Campus Required</span>
+                </td>
+
+
+            </tr>
+            <tr class="cat-container">
+                <td>
+                    <input type="text" id="floorId" class="form-control" placeholder="Floor" />
+                    <span class="error">Floor required.</span>
+                </td>
+                <td>
+                    <input type="text" id="roomNo" class="form-control" placeholder="Room No" />
+                    <span class="error">Room No required.</span>
+                </td>
+                <td>
+                    <input type="text" id="statusRemark" class="form-control" placeholder="Remark" />
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <h2>Issue Type</h2>
+    <table class="table table-responsive table-warning">
+        <tr>
+            <td class="col col-md-3">Device&nbsp; <input id="deviceId" name="statusType" type="radio" value="Device" checked="checked" /></td>
+            <td class="col col-md-3">CPU/DVR&nbsp; <input id="cpuId" name="statusType" type="radio" value="CPU" class="cpuId" /> </td>
+            <td class="col col-md-3">&nbsp;</td>
+        </tr>
+    </table>
+    <div class="details">
+        <h2>
+            Search Device
+        </h2>
+        <table id="checkinDetails" class="table table-responsive table-bordered">
+            <thead>
+            @*<tr>
+                <th>CheckIn Details Code</th>
+                <th>CPU Code</th>
+                <th>Device Code</th>
+                <th>Item Name</th>
+                <th>Item Model</th>
+                <th>Item Brand</th>
+                <th>Item Size</th>
+                <th>Audit Code</th>
+                <th>Invoice No</th>
+                <th>Unit Price</th>
+                <th>Warrant Expired Date</th>
+                <th>Product Serial No</th>
+                <th>Item Status</th>
+                <th>Current Status</th>
+                <th>Remarks</th>
+                <th>Device Add</th>
+                <th>CPU Add</th>
+            </tr>*@
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="details">
+        <h2>
+            Issue Details
+        </h2>
+        <table class="table table-responsive table-hover">
+            <tr>
+                <th>CPU Code</th>
+                <th>Device Code</th>
+                <th>Check In Detail</th>
+                <th>Item Name</th>
+                <th>Item Brand</th>
+                <th>Item Model</th>
+                <th>Item Size</th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr class="mycontainer cat-container" id="mainIssueDetailsrow">
+                <td>
+                    <input type="text" id="cpuCode" class="cpuCode form-control hidden" placeholder="CPU Code" readonly="readonly" />
+                </td>
+                <td>
+                    <input type="text" id="deviceCode" class="deviceCode form-control hidden" placeholder="Device Code" readonly="readonly" />
+                </td>
+                <td>
+                    <input type="text" id="checkInDetailId" class="checkInDetailId form-control hidden" placeholder="checkIn Detail Id" readonly="readonly" />
+                </td>
+                <td>
+                    <input type="text" id="itemName" class="form-control hidden" placeholder="Item Name" readonly="readonly" />
+                </td>
+                <td>
+                    <input type="text" id="itemModel" class="form-control hidden" placeholder="Item Model" readonly="readonly" />
+                </td>
+                <td>
+                    <input type="text" id="itemBrand" class="form-control hidden" placeholder="Item Brand" readonly="readonly" />
+                </td>
+                <td>
+                    <input type="text" id="itemSize" class="form-control hidden" placeholder="Item Size" readonly="readonly" />
+                </td>
+                <td>
+                    <input type="button" id="add" value="add" style="width: 80px" class="btn btn-success hidden" />
+                </td>
+            </tr>
+        </table>
+        
+
+        <div id="orderItems">
+            <table class="table table-responsive" id="issuedetailsStore"></table>
+            <span id="issueError" style="color: red"></span>
+        </div>
+        <div style="padding: 10px 0; text-align: right">
+            <input id="submit" type="button" value="Save Item" class="btn btn-warning" style="padding: 10px 20px" />
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/App/issuecontroller.js"></script>
+    <script src="~/App/checkInDetailsDatatable.js"></script>
+<script src="//cdn.rawgit.com/ashl1/datatables-rowsgroup/v1.0.0/dataTables.rowsGroup.js"></script>
+}
+

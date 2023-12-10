@@ -1,0 +1,147 @@
+﻿@model ULABInventory.Model.CheckInDetail
+
+@{
+    ViewBag.Title = "Check-In Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInDetailId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInDetailId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemDetail.Item.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemDetail.Item.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuditCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CpuId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CpuId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemDetail.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemDetail.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemDetail.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemDetail.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemDetail.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemDetail.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unitprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unitprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WarrantyExpireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WarrantyExpireDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSerialNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductSerialNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QueryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

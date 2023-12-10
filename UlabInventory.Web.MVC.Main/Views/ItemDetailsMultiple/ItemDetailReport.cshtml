@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ULABInventory.ViewModels.ItemDetailVM>
+
+@{
+    ViewBag.Title = "ItemDetailReport";
+}
+
+<h2>ItemDetailReport</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Priority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subcategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Details)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Priority)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subcategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Details)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Item_Detail_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Item_Detail_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Item_Detail_Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<ULABInventory.Models.CheckInDetails>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckIn.InvoiceNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuditCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemBrand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unitprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WarrantyExpireDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductSerialNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedIp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedIp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckIn.InvoiceNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuditCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeviceCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemBrand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unitprice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WarrantyExpireDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductSerialNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedIp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedIp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

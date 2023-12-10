@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EmployeeDataSet" targetNamespace="http://tempuri.org/EmployeeDataSet.xsd" xmlns:mstns="http://tempuri.org/EmployeeDataSet.xsd" xmlns="http://tempuri.org/EmployeeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DefaultConnection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DefaultConnection (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DefaultConnection.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EmployeeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EmployeeDataSet" msprop:Generator_UserDSName="EmployeeDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="spEmployee" msprop:Generator_TableClassName="spEmployeeDataTable" msprop:Generator_TableVarName="tablespEmployee" msprop:Generator_TablePropName="spEmployee" msprop:Generator_RowDeletingName="spEmployeeRowDeleting" msprop:Generator_RowChangingName="spEmployeeRowChanging" msprop:Generator_RowEvHandlerName="spEmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="spEmployeeRowDeleted" msprop:Generator_UserTableName="spEmployee" msprop:Generator_RowChangedName="spEmployeeRowChanged" msprop:Generator_RowEvArgName="spEmployeeRowChangeEvent" msprop:Generator_RowClassName="spEmployeeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Employee_Id" msprop:Generator_ColumnVarNameInTable="columnEmployee_Id" msprop:Generator_ColumnPropNameInRow="Employee_Id" msprop:Generator_ColumnPropNameInTable="Employee_IdColumn" msprop:Generator_UserColumnName="Employee_Id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Employee_Name" msprop:Generator_ColumnVarNameInTable="columnEmployee_Name" msprop:Generator_ColumnPropNameInRow="Employee_Name" msprop:Generator_ColumnPropNameInTable="Employee_NameColumn" msprop:Generator_UserColumnName="Employee_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Designation" msprop:Generator_ColumnVarNameInTable="columnDesignation" msprop:Generator_ColumnPropNameInRow="Designation" msprop:Generator_ColumnPropNameInTable="DesignationColumn" msprop:Generator_UserColumnName="Designation">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Department_Name" msprop:Generator_ColumnVarNameInTable="columnDepartment_Name" msprop:Generator_ColumnPropNameInRow="Department_Name" msprop:Generator_ColumnPropNameInTable="Department_NameColumn" msprop:Generator_UserColumnName="Department_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Program_Name" msprop:Generator_ColumnVarNameInTable="columnProgram_Name" msprop:Generator_ColumnPropNameInRow="Program_Name" msprop:Generator_ColumnPropNameInTable="Program_NameColumn" msprop:Generator_UserColumnName="Program_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:spEmployee" />
+      <xs:field xpath="mstns:Employee_Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

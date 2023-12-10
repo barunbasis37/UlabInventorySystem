@@ -1,0 +1,149 @@
+﻿@model ULABInventory.Model.IssueDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Issue Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Issue.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Issue.EmployeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CpuId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CpuId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgainstDeviceCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgainstDeviceCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceReturnRemarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceReturnRemarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnComment)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.QueryId)
+        </dt>
+        @if (User.IsInRole("Admin"))
+        {
+            <dd>
+                @Html.DisplayFor(model => model.QueryId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PostedBy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PostedBy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PostedIp)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PostedIp)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PostedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PostedDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdatedBy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UpdatedBy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdatedIp)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UpdatedIp)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdatedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UpdatedDate)
+            </dd>*@
+        }
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QueryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

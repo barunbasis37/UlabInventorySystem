@@ -1,0 +1,184 @@
+﻿@model ULABInventory.Models.CheckInDetails
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CheckInDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckIn.InvoiceNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckIn.InvoiceNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Item.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CpuCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CpuCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemBrand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemBrand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unitprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unitprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WarrantyExpireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WarrantyExpireDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSerialNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductSerialNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

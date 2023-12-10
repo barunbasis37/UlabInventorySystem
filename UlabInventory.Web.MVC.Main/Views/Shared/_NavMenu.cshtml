@@ -1,0 +1,305 @@
+﻿@using System.Diagnostics.Eventing.Reader
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img class="img-rounded ImhHL img-responsive" src="~/Image/ULAB-logo-small.gif" />
+
+        </div>
+        <div class="navbar-collapse collapse">
+
+            <ul id="menu" class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @if (Request.IsAuthenticated)
+                {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>&nbsp;Master Data&nbsp;<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("School", "Index", "Schools")</li>
+                                <li>@Html.ActionLink("Department", "Index", "Departments")</li>
+                                <li>@Html.ActionLink("Program", "Index", "Programs")</li>
+                                <li>@Html.ActionLink("Campus", "Index", "Campus")</li>
+                                <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
+                                <li>@Html.ActionLink("Category", "Index", "Categories")</li>
+                                <li>@Html.ActionLink("SubCategory", "Index", "SubCategories")</li>
+                                <li>@Html.ActionLink("Supplier", "Index", "Suppliers")</li>
+                                <li>@Html.ActionLink("Item", "Index", "Items")</li>
+                                <li>@Html.ActionLink("Issue Type", "Index", "IssueTypes")</li>
+
+
+                            }
+                            else if (User.IsInRole("Manager"))
+                            {
+                                <li>@Html.ActionLink("School", "Index", "Schools")</li>
+                                <li>@Html.ActionLink("Department", "Index", "Departments")</li>
+                                <li>@Html.ActionLink("Program", "Index", "Programs")</li>
+                                <li>@Html.ActionLink("Campus", "Index", "Campus")</li>
+                                <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
+                                <li>@Html.ActionLink("Category", "Index", "Categories")</li>
+                                <li>@Html.ActionLink("SubCategory", "Index", "SubCategories")</li>
+                                <li>@Html.ActionLink("Supplier", "Index", "Suppliers")</li>
+                                <li>@Html.ActionLink("Item", "Index", "Items")</li>
+                                <li>@Html.ActionLink("Issue Type", "Index", "IssueTypes")</li>
+
+
+                            }
+                            else if (User.IsInRole("Contributor"))
+                            {
+                                <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
+                                <li>@Html.ActionLink("SubCategory", "Index", "SubCategories")</li>
+                                <li>@Html.ActionLink("Supplier", "Index", "Suppliers")</li>
+                                @*<li>@Html.ActionLink("Item", "Index", "Items")</li>*@
+                                @*<li>@Html.ActionLink("Item Insert", "CreateMultipleItem", "ItemDetailsMultiple")</li>
+                        <li>@Html.ActionLink("Item Edit", "Index", "ItemDetails")</li>*@
+                            }
+
+                        </ul>
+                    </li>
+
+
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>&nbsp;Transaction&nbsp;<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            @if (User.IsInRole("Admin"))
+                            {
+
+                                <li>@Html.ActionLink("Create Multiple Item", "CreateMultipleItem", "ItemDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Create Multiple CheckIn", "CreateCheckInDetailsMultiple", "CheckInDetailsMultiple")</li>
+
+                                @*<li>@Html.ActionLink("Issue", "Index", "Issues")</li>
+            <li>@Html.ActionLink("Issue(M)", "CreateMultipleIssueDetail", "IssueDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("Create Multiple Requisition", "CreateRequisition", "RequisitionDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Create Multiple Issue", "CreateIssue", "IssueDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("Approve-Deny Process", "GetListOfRequisitionItem", "RequisitionDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Issued Requisition", "GetListOfApprovedItem", "RequisitionDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("Issued Process", "GetListOfApprovedItem", "RequisitionDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Return-Disposal Process", "GetIssueApprovedItemList", "IssueApproval")</li>
+                                @*<li>@Html.ActionLink("Damage", "GetIssueItemListForDamage", "IssueApproval")</li>*@
+                                <li>@Html.ActionLink("Search Checkin Details", "CheckInDetailsView", "CheckInDetails")</li>
+                                <li>@Html.ActionLink("Search Requisition Details", "RequisitionItemStatus", "RequisitionDetailsMultiple")</li>
+
+                            }
+                            else if (User.IsInRole("Manager"))
+                            {
+
+                                <li>@Html.ActionLink("Create Multiple Item", "CreateMultipleItem", "ItemDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Create Multiple CheckIn", "CreateCheckInDetailsMultiple", "CheckInDetailsMultiple")</li>
+
+                                @*<li>@Html.ActionLink("Issue", "Index", "Issues")</li>
+            <li>@Html.ActionLink("Issue(M)", "CreateMultipleIssueDetail", "IssueDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("Create Multiple Requisition", "CreateRequisition", "RequisitionDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Create Multiple Issue", "CreateIssue", "IssueDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("Issued Process", "GetListOfApprovedItem", "RequisitionDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Approve-Deny Process", "GetListOfRequisitionItem", "RequisitionDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Issued Requisition", "GetListOfApprovedItem", "RequisitionDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("Issued Process", "GetListOfApprovedItem", "RequisitionDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Return-Disposal Process", "GetIssueApprovedItemList", "IssueApproval")</li>
+                                <li>@Html.ActionLink("Search Checkin Details", "CheckInDetailsView", "CheckInDetails")</li>
+                                <li>@Html.ActionLink("Search Requisition Details", "RequisitionItemStatus", "RequisitionDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Damage", "GetIssueItemListForDamage", "IssueApproval")</li>*@
+
+                                @*<li>@Html.ActionLink("Return/Replace", "GetIssueItemList", "IssueDetailsMultiple")</li>*@
+
+                                @*<li>@Html.ActionLink("Garbageds", "Index", "Garbageds")</li>
+            <li>@Html.ActionLink("Edit CheckIn", "Index", "CheckIns")</li>
+            <li>@Html.ActionLink("Edit CheckIn Details", "Index", "CheckInDetails")</li>
+            <li>@Html.ActionLink("CheckIn Details Report", "CheckInDetailsView", "CheckInDetails")</li>
+            <li>@Html.ActionLink("Edit Issue", "Index", "Issues")</li>
+            <li>@Html.ActionLink("Edit Issue Details", "Index", "IssueDetails")</li>
+            <li>@Html.ActionLink("Issue Details(Report)", "IssueDetailsView", "IssueDetails")</li>*@
+                            }
+                            else if (User.IsInRole("Contributor"))
+                            {
+                                <li>@Html.ActionLink("Create Multiple Item", "CreateMultipleItem", "ItemDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Create Multiple CheckIn", "CreateCheckInDetailsMultiple", "CheckInDetailsMultiple")</li>
+
+                                @*<li>@Html.ActionLink("Issue", "Index", "Issues")</li>
+            <li>@Html.ActionLink("Issue(M)", "CreateMultipleIssueDetail", "IssueDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("Create Multiple Requisition", "CreateRequisition", "RequisitionDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Issued Process", "GetListOfApprovedItem", "RequisitionDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Return/Replace", "GetIssueItemList", "IssueDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("Return-Disposal Process", "GetIssueApprovedItemList", "IssueApproval")</li>
+                                <li>@Html.ActionLink("Search Checkin Details", "CheckInDetailsView", "CheckInDetails")</li>
+                                <li>@Html.ActionLink("Search Requisition Details", "RequisitionItemStatus", "RequisitionDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Garbageds", "Index", "Garbageds")</li>*@
+                            }
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>&nbsp;Modification&nbsp;<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("Item Details", "Index", "ItemDetails")</li>
+                                <li>@Html.ActionLink("Edit CheckIn", "Index", "CheckIns")</li>
+                                <li>@Html.ActionLink("Edit CheckIn Details", "Index", "CheckInDetails")</li>
+                                <li>@Html.ActionLink("CheckIn(M)", "CreateCheckInDetailsMultiple", "CheckInDetailsMultiple")</li>
+                                <li>@Html.ActionLink("CheckIn Details Report", "CheckInDetailsView", "CheckInDetails")</li>
+
+                            }
+                            else if (User.IsInRole("Manager"))
+                            {
+                                <li>@Html.ActionLink("Item Details", "Index", "ItemDetails")</li>
+                                <li>@Html.ActionLink("Edit CheckIn", "Index", "CheckIns")</li>
+                                <li>@Html.ActionLink("Edit CheckIn Details", "Index", "CheckInDetails")</li>
+                                @*<li>@Html.ActionLink("CheckIn Details Report", "CheckInDetailsView", "CheckInDetails")</li>
+                        <li>@Html.ActionLink("Edit Issue", "Index", "Issues")</li>
+                        <li>@Html.ActionLink("Edit Issue Details", "Index", "IssueDetails")</li>
+                        <li>@Html.ActionLink("Issue Details(Report)", "IssueDetailsView", "IssueDetails")</li>*@
+                            }
+                            else if (User.IsInRole("Contributor"))
+                            {
+                                <li>@Html.ActionLink("Edit CheckIn", "Index", "CheckIns")</li>
+                                @*<li>@Html.ActionLink("Edit CheckIn Details", "Index", "CheckInDetails")</li>*@
+
+                                @*<li>@Html.ActionLink("Edit Issue", "Index", "Issues")</li>
+                        <li>@Html.ActionLink("Edit Issue Details", "Index", "IssueDetails")</li>
+                        <li>@Html.ActionLink("Issue Details(Report)", "IssueDetailsView", "IssueDetails")</li>*@
+                            }
+
+                        </ul>
+                    </li>
+
+                    @*<li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>&nbsp;Edit Transaction&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    @if (User.IsInRole("Admin"))
+                    {
+
+
+                    }
+                    else if (User.IsInRole("Contributor"))
+                    {
+                        <li>@Html.ActionLink("Edit CheckIn", "Index", "CheckIns")</li>
+                        <li>@Html.ActionLink("Edit CheckIn Details", "Index", "CheckInDetails")</li>
+                        <li>@Html.ActionLink("Search CheckIn Details", "CheckInDetailsView", "CheckInDetails")</li>
+                        <li>@Html.ActionLink("Edit Issue", "Index", "Issues")</li>
+                        <li>@Html.ActionLink("Edit Issue Details", "Index", "IssueDetails")</li>
+                        <li>@Html.ActionLink("Search Issue Details", "IssueDetailsView", "IssueDetails")</li>
+
+                    }
+
+                </ul>
+            </li>*@
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>&nbsp;Reports&nbsp;<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            @if (User.IsInRole("Admin"))
+                            {
+                                @*<li>@Html.ActionLink("School", "Index", "Schools")</li>
+                        <li>@Html.ActionLink("Department List", "Index", "Report")</li>
+                        <li>@Html.ActionLink("Campus", "Index", "Campus")</li>
+                        <li>@Html.ActionLink("Program", "Index", "Programs")</li>*@
+                                <li>@Html.ActionLink("Employee Report", "EmployeeReport", "Employees")</li>
+                                //, new { target = "_blank" }
+                                <li>@Html.ActionLink("Item Details Report", "ItemDetailReport", "ItemDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Check-In Details Report", "CheckInDetailReport", "CheckInDetailsMultiple")</li>
+                                <li>@Html.ActionLink("QR Check-In Details Report", "QRImgChkInDetailReport", "CheckInDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Issue Details Report", "IssueDetailReport", "IssueDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("QR Check-In Details Report (Crystal)", "QRImgCheckInDetailReport", "CheckInDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Aspx QR Img", "QRImgReportView", "CheckInDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Check In Details Report", "CheckInDetailsReport", "CheckInDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Check In Details Crystal Report", "QRImgCrystalReportView", "CheckInDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Issue Details Crystal Report", "IssueDetailsViewReport", "IssueDetailsMultiple")</li>*@
+                                @*<li>@Html.ActionLink("Employee (SP)", "GetEmployeeSP", "Employees")</li>
+                        <li>@Html.ActionLink("Category", "Index", "Categories")</li>
+                        <li>@Html.ActionLink("SubCategory", "Index", "SubCategories")</li>
+                        <li>@Html.ActionLink("Supplier", "Index", "Suppliers")</li>
+                        <li>@Html.ActionLink("Item", "Index", "Items")</li>
+
+                        <li>@Html.ActionLink("Item(I/M)", "CreateMultipleItem", "ItemDetailsMultiple")</li>
+                        <li>@Html.ActionLink("Issue Type", "Index", "IssueTypes")</li>*@
+                                @*<li>@Html.ActionLink("Item(M)", "CreateMultipleItemDetail", "ItemDetailsMultiple")</li>*@
+                            }
+                            else if (User.IsInRole("Manager"))
+                            {
+
+                                <li>@Html.ActionLink("Employee Report", "EmployeeReport", "Employees")</li>
+                                <li>@Html.ActionLink("Item Details Report", "ItemDetailReport", "ItemDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Check-In Details Report", "CheckInDetailReport", "CheckInDetailsMultiple")</li>
+                                <li>@Html.ActionLink("QR Check-In Details Report (Crystal)", "QRImgCheckInDetailReport", "CheckInDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Issue Details Report", "IssueDetailReport", "IssueDetailsMultiple")</li>*@
+                                <li>@Html.ActionLink("CheckIn Details Report", "CheckInDetailsView", "CheckInDetails")</li>
+                                @*<li>@Html.ActionLink("Issue Details(Report)", "IssueDetailsView", "IssueDetails")</li>*@
+                            }
+                            else if (User.IsInRole("Contributor"))
+                            {
+                                <li>@Html.ActionLink("Employee Report", "EmployeeReport", "Employees")</li>
+                                <li>@Html.ActionLink("Item Details Report", "ItemDetailReport", "ItemDetailsMultiple")</li>
+                                <li>@Html.ActionLink("Check-In Details Report", "CheckInDetailReport", "CheckInDetailsMultiple")</li>
+                                <li>@Html.ActionLink("QR Check-In Details Report (Crystal)", "QRImgCheckInDetailReport", "CheckInDetailsMultiple")</li>
+                                @*<li>@Html.ActionLink("Issue Details Report", "IssueDetailReport", "IssueDetailsMultiple")</li>
+                        <li>@Html.ActionLink("Issue Details(Report)", "IssueDetailsView", "IssueDetails")</li>*@
+                            }
+
+                        </ul>
+                    </li>
+
+
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-alert"></i>&nbsp;Admin&nbsp;<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                            <li>@Html.ActionLink("Roles", "Index", "RolesAdmin")</li>
+                            <li>@Html.ActionLink("Permission", "Index", "UsersAdmin")</li>
+                            <li>@Html.ActionLink("Change Password", "ChangePassword", "Manage")</li>
+                            <li>@Html.ActionLink("Reset Password", "ResetUserPassword", "Manage")</li>
+
+                        </ul>
+                    </li>
+                    
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-alert"></i>&nbsp;Extra Process&nbsp;<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Item Details", "Index", "ItemDetails")</li>
+                            <li>@Html.ActionLink("Item(I/M)", "CreateMultipleItem", "ItemDetailsMultiple")</li>
+                            <li>@Html.ActionLink("Issue Type", "Index", "IssueTypes")</li>
+                            <li>@Html.ActionLink("Return(Old)", "GetIssueItemList", "IssueDetailsMultiple")</li>
+                            <li>@Html.ActionLink("Damage(Old)", "GetIssueItemListForDamage", "IssueDetailsMultiple")</li>
+                            <li>@Html.ActionLink("Issue", "Index", "Issues")</li>
+
+                            <li>@Html.ActionLink("Issue(I/M)", "CreateIssue", "IssueDetailsMultiple")</li>
+                            <li>@Html.ActionLink("Return/Replace", "GetIssueItemList", "IssueDetailsMultiple")</li>
+                            <li>@Html.ActionLink("Return", "GetIssueItemList", "IssueDetailsMultiple")</li>
+                            <li>@Html.ActionLink("Damage", "GetIssueItemListForDamage", "IssueDetailsMultiple")</li>
+                            @*<li>@Html.ActionLink("Garbageds", "Index", "Garbageds")</li>*@
+                            <li>@Html.ActionLink("Item(M)", "CreateMultipleItemDetail", "ItemDetailsMultiple")</li>
+
+                            <li>@Html.ActionLink("CheckIn(M)", "CreateCheckInDetailsMultiple", "CheckInDetailsMultiple")</li>
+                            <li>@Html.ActionLink("CheckIn Details Report", "CheckInDetailsView", "CheckInDetails")</li>
+                            <li>@Html.ActionLink("Issue", "Index", "Issues")</li>
+                            <li>@Html.ActionLink("Issue(M)", "CreateMultipleIssueDetail", "IssueDetailsMultiple")</li>
+                            <li>@Html.ActionLink("Issue(I/M)", "CreateIssue", "IssueDetailsMultiple")</li>
+                            <li>@Html.ActionLink("Garbageds", "Index", "Garbageds")</li>
+                           
+
+                        </ul>
+                    </li>
+
+                }
+                @*@if (Request.IsAuthenticated && User.IsInRole("Contributor"))
+        {
+            <li>@Html.ActionLink("Change Password", "ChangePassword", "Manage")</li>
+        }*@
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>

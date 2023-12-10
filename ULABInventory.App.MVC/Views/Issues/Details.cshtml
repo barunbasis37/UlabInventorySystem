@@ -1,0 +1,154 @@
+﻿@model ULABInventory.Models.Issue
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Issue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Campus.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Campus.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.DepartmentShortCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartmentShortCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Floor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Floor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssueRemark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssueRemark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnRemark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnRemark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

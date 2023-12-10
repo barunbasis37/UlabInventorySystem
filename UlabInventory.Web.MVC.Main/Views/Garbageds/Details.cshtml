@@ -1,0 +1,122 @@
+﻿@model ULABInventory.Model.Garbaged
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Garbaged</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CpuId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CpuId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GarbagedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GarbagedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GarbagedIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GarbagedIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GarbagedEntryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GarbagedEntryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QueryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QueryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedIp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedIp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GarbagedId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

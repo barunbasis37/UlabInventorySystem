@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ULABInventory.Models.Garbaged>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckInDetails.ItemModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InDetails.ItemModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GarbagedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GarbagedIp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GarbagedEntryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedIp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedIp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckInDetails.ItemModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InDetails.ItemModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GarbagedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GarbagedIp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GarbagedEntryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedIp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedIp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

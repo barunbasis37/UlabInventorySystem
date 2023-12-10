@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5687B7C6-1C8C-46B8-A9E5-4D9BCF692D87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ULABInventory.Models</RootNamespace>
+    <AssemblyName>ULABInventory.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Campus.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="CheckIn.cs" />
+    <Compile Include="CheckInDetails.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Garbaged.cs" />
+    <Compile Include="InventoryDbContext.cs" />
+    <Compile Include="Issue.cs" />
+    <Compile Include="IssueDetail.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemDetails.cs" />
+    <Compile Include="Migrations\201704230558273_Initial-Database23.4.2017.cs" />
+    <Compile Include="Migrations\201704230558273_Initial-Database23.4.2017.Designer.cs">
+      <DependentUpon>201704230558273_Initial-Database23.4.2017.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704230833360_IdentiUserTwoColumAdd23.4.2017.cs" />
+    <Compile Include="Migrations\201704230833360_IdentiUserTwoColumAdd23.4.2017.Designer.cs">
+      <DependentUpon>201704230833360_IdentiUserTwoColumAdd23.4.2017.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706150625403_IdentiUserTwoColumAdd23420171.cs" />
+    <Compile Include="Migrations\201706150625403_IdentiUserTwoColumAdd23420171.Designer.cs">
+      <DependentUpon>201706150625403_IdentiUserTwoColumAdd23420171.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706150733056_CpuIdRemove.cs" />
+    <Compile Include="Migrations\201706150733056_CpuIdRemove.Designer.cs">
+      <DependentUpon>201706150733056_CpuIdRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706150838465_AddAuditCode.cs" />
+    <Compile Include="Migrations\201706150838465_AddAuditCode.Designer.cs">
+      <DependentUpon>201706150838465_AddAuditCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707190723073_ModifyDeviceCode.cs" />
+    <Compile Include="Migrations\201707190723073_ModifyDeviceCode.Designer.cs">
+      <DependentUpon>201707190723073_ModifyDeviceCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707191005551_DeviceDatatypeChange.cs" />
+    <Compile Include="Migrations\201707191005551_DeviceDatatypeChange.Designer.cs">
+      <DependentUpon>201707191005551_DeviceDatatypeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707230639262_AddCPUCode.cs" />
+    <Compile Include="Migrations\201707230639262_AddCPUCode.Designer.cs">
+      <DependentUpon>201707230639262_AddCPUCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707250857345_AddIsApproved.cs" />
+    <Compile Include="Migrations\201707250857345_AddIsApproved.Designer.cs">
+      <DependentUpon>201707250857345_AddIsApproved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707250936301_AddCPUId&amp;DevIdDatatypeChange.cs" />
+    <Compile Include="Migrations\201707250936301_AddCPUId&amp;DevIdDatatypeChange.Designer.cs">
+      <DependentUpon>201707250936301_AddCPUId&amp;DevIdDatatypeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020852424_Change-Dev-Cpu-Datatype.cs" />
+    <Compile Include="Migrations\201708020852424_Change-Dev-Cpu-Datatype.Designer.cs">
+      <DependentUpon>201708020852424_Change-Dev-Cpu-Datatype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708200634386_AddStringLengthDeviceAndCPUCode.cs" />
+    <Compile Include="Migrations\201708200634386_AddStringLengthDeviceAndCPUCode.Designer.cs">
+      <DependentUpon>201708200634386_AddStringLengthDeviceAndCPUCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711011121053_ChangePrimaryKeyAndAddqueryId.cs" />
+    <Compile Include="Migrations\201711011121053_ChangePrimaryKeyAndAddqueryId.Designer.cs">
+      <DependentUpon>201711011121053_ChangePrimaryKeyAndAddqueryId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseBy.cs" />
+    <Compile Include="Requisition.cs" />
+    <Compile Include="RequisitionDetails.cs" />
+    <Compile Include="School.cs" />
+    <Compile Include="SubCategory.cs" />
+    <Compile Include="Supplier.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704230558273_Initial-Database23.4.2017.resx">
+      <DependentUpon>201704230558273_Initial-Database23.4.2017.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704230833360_IdentiUserTwoColumAdd23.4.2017.resx">
+      <DependentUpon>201704230833360_IdentiUserTwoColumAdd23.4.2017.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706150625403_IdentiUserTwoColumAdd23420171.resx">
+      <DependentUpon>201706150625403_IdentiUserTwoColumAdd23420171.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706150733056_CpuIdRemove.resx">
+      <DependentUpon>201706150733056_CpuIdRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706150838465_AddAuditCode.resx">
+      <DependentUpon>201706150838465_AddAuditCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707190723073_ModifyDeviceCode.resx">
+      <DependentUpon>201707190723073_ModifyDeviceCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707191005551_DeviceDatatypeChange.resx">
+      <DependentUpon>201707191005551_DeviceDatatypeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707230639262_AddCPUCode.resx">
+      <DependentUpon>201707230639262_AddCPUCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707250857345_AddIsApproved.resx">
+      <DependentUpon>201707250857345_AddIsApproved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707250936301_AddCPUId&amp;DevIdDatatypeChange.resx">
+      <DependentUpon>201707250936301_AddCPUId&amp;DevIdDatatypeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020852424_Change-Dev-Cpu-Datatype.resx">
+      <DependentUpon>201708020852424_Change-Dev-Cpu-Datatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708200634386_AddStringLengthDeviceAndCPUCode.resx">
+      <DependentUpon>201708200634386_AddStringLengthDeviceAndCPUCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711011121053_ChangePrimaryKeyAndAddqueryId.resx">
+      <DependentUpon>201711011121053_ChangePrimaryKeyAndAddqueryId.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

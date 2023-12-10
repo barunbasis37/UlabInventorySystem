@@ -1,0 +1,131 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<ULABInventory.Model.CheckInDetail>
+
+@{
+    ViewBag.Title = "Check-In Information";
+}
+
+<h2>Index</h2>
+@if (User.IsInRole("Manager"))
+{
+    <p>
+        <a href="@Url.Action("Create", "CheckInDetails")" class="btn btn-success">Create New Check-In&nbsp;&nbsp;<span class="glyphicon glyphicon-pencil"></span></a>
+        @*@Html.ActionLink("Create New", "Create")*@
+    </p>
+}
+<p>
+    @using (@Html.BeginForm("Index", "CheckInDetails", FormMethod.Get, new { id = "unVerifiedAlumniForm", @class = "navbar navbar-left" }))
+    {
+        <div class="form-inline">
+            @Html.TextBox("search", null, new { @class = "form-control" }) <input type="submit" value="search" class="form-control" />
+        </div>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().CpuId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DeviceId)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.CheckIn.CategoryId)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.First().Item.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().AuditCode)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.First().ItemDetailsId)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.ItemSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemBrand)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.First().Unitprice)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.WarrantyExpireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductSerialNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemStatus)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.First().CurrentStatus)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CpuId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeviceId)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.CheckIn.CategoryId)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuditCode)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemDetailsId)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ItemSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemBrand)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Unitprice)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.WarrantyExpireDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductSerialNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemStatus)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentStatus)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Remarks)
+                </td>*@
+            @if (User.IsInRole("Manager"))
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.QueryId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.QueryId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.QueryId })
+                </td>
+            }
+        </tr>
+    }
+
+</table>
+<div class="text-center">@Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true })</div>

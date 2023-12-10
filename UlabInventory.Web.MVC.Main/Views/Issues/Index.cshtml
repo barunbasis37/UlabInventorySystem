@@ -1,0 +1,142 @@
+﻿@using System.Linq
+@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<ULABInventory.Model.Issue>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @using (@Html.BeginForm("Index", "Issues", FormMethod.Get, new { id = "issueForm", @class = "navbar navbar-left" }))
+    {
+        <div class="form-inline">
+            @Html.TextBox("search", null, new { @class = "form-control" }) <input type="submit" value="search" class="form-control" />
+        </div>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Campus.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Department.DepartmentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Employee.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Floor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Room)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().IssueRemark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ReturnRemark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ApprovedId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ApprovedDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ApprovedIp)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.QueryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostedIp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedIp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedDate)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Campus.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Floor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueRemark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnRemark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedIp)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.QueryId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostedIp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedIp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedDate)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IssueId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IssueId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IssueId })
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="text-center">@Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true })</div>

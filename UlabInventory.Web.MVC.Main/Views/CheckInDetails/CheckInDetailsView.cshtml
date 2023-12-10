@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ULABInventory.ViewModels.CheckInDetailsVM>
+@{
+    ViewBag.Title = "List CheckIn Details";
+}
+<div class="container">
+    <div class="section">
+        <h2>List of Item's Check-In Details Report</h2>
+        <table class="table table-responsive table-warning">
+            <tr>
+                <td class="col col-md-3">Device&nbsp; <input id="deviceId" name="statusType" type="radio" value="Device" checked="checked" /></td>
+                <td class="col col-md-3">CPU/DVR&nbsp; <input id="cpuId" name="statusType" type="radio" value="CPU" class="cpuId" /> </td>
+                <td class="col col-md-3">&nbsp;</td>
+            </tr>
+        </table>
+
+        <div style="width:90%; margin:0 auto;">
+            <table id="checkinDetails" class="table table-responsive table-bordered">
+                <thead>
+                <tr>
+                    @*<th><input name="select_all" value="1" type="checkbox"></th>*@
+                    <th>Device Code</th>
+                    <th>Item Name</th>
+                    <th>Item Model</th>
+                    <th>Item Brand</th>
+                    <th>Item Size</th>
+                    <th>Audit Code</th>
+                    <th>Invoice No</th>
+                    <th>Unit Price</th>
+                    <th>Warrant Expired Date</th>
+                    <th>Product Serial No</th>
+                    <th>Item Status</th>
+                    @*<th>Current Status</th>
+                    <th>Remarks</th>*@
+                </tr>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <style>
+            tr.even {
+                background-color: #F5F5F5 !important;
+            }
+        </style>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/App/checkInDetailsAllData.js"></script>
+}
+
+

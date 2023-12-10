@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Return/Replace Manager";
+}
+
+<h2>Replace/Return Manager</h2>
+
+<div class="container">
+    <div class="master">
+        <table class="table table-responsive table-warning">
+            <tr>
+                @*<td class="col col-md-3">Issued&nbsp; <input id="issueId" name="statusType" type="radio" value="Issued" checked="checked" /></td>*@
+                <td class="col col-md-3">Replaced&nbsp; <input id="replaceId" name="statusType" type="radio" value="Replaced" class="replaceId"/> </td>
+                <td class="col col-md-3">Returned&nbsp; <input id="returnId" name="statusType" type="radio" value="Returned" /> </td>
+                <td class="col col-md-3">&nbsp;</td>
+            </tr>
+        </table>
+        <h2>Create Replace/Return</h2>
+        <table class="table table-responsive">
+            <tr class="cat-container">
+                <td>
+                    <select id="departmentId" class="departmentId form-control" onchange="LoadEmpByDept(this)">
+                        <option>Select Department</option>
+                    </select>
+                    <span class="error">Department Required</span>
+                </td>
+                <td>
+                    <select id="employeeIdDept" class="employeeIdDept form-control">
+                        <option>Select Employee Id</option>
+                    </select>
+                    <span class="error">Employee Id Required</span>
+                </td>
+                <td>
+                    <select id="campusID" class="campusID form-control">
+                        <option>Select Campus</option>
+                    </select>
+                    <span class="error">Campus Required</span>
+                </td>
+
+
+            </tr>
+            <tr class="cat-container">
+                <td>
+                    <input type="text" id="floorId" class="form-control" placeholder="Floor"/>
+                    <span class="error">Floor required.</span>
+                </td>
+                <td>
+                    <input type="text" id="roomNo" class="form-control" placeholder="Room No"/>
+                    <span class="error">Room No required.</span>
+                </td>
+                <td>
+                    <input type="text" id="statusRemark" class="form-control" placeholder="Remark"/>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    
+
+    <div class="details">
+        <h2>
+            Replace/Return Details
+        </h2>
+
+
+        <table class="table table-responsive table-hover">
+            <tr>
+                <th>CPU Code</th>
+                <th>Device Code</th>
+                <th>Replace Device Code</th>
+                <th>Return Remarks</th>
+                @*<th>Date</th>*@
+                <th>&nbsp;</th>
+            </tr>
+
+
+            <tr class="mycontainer cat-container" id="mainIssueDetailsrow">
+                <td>
+                    <select id="cpuCode" class="cpuCode form-control" onchange="LoadDeviceCode(this)">
+                        <option>Select CPU Code</option>
+                    </select>
+                    <span class="error">CPU Code required</span>
+                </td>
+                <td>
+                    <select id="deviceCode" class="deviceCode form-control">
+                        <option>Select Device Code</option>
+                    </select>
+                    <span class="error">Device Code required</span>
+                </td>
+                <td>
+                    <input type="text" id="replaceDeviceCode" class="replaceDeviceCode form-control" placeholder="Replace Device Code" disabled="disabled" value="N/A"/>
+                    <span class="error">Replace Device Code required</span>
+                </td>
+                <td>
+                    <input type="text" id="returnRemarks" class="returnRemarks form-control" placeholder="Remark" disabled="disabled" value="N/A"/>
+                    
+                </td>
+                @*<td>
+                    <input type="text" id="statusDate" class="datepicker statusDate form-control" placeholder="Status Date" />
+                    <span class="error">Date required</span>
+                </td>*@
+                <td>
+                    <input type="button" id="add" value="add" style="width: 80px" class="btn btn-success" />
+                </td>
+            </tr>
+        </table>
+        <div id="orderItems">
+            <table class="table table-responsive" id="issuedetailsStore"></table>
+            <span id="issueError" style="color: red"></span>
+        </div>
+        <div style="padding: 10px 0; text-align: right">
+            <input id="submit" type="button" value="Save Item" class="btn btn-warning" style="padding: 10px 20px" />
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/App/return-replacecontroller.js"></script>
+}
+
+
+
+

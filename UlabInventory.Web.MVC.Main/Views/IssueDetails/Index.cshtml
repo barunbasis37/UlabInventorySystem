@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ULABInventory.Model.IssueDetail>
+
+@{
+    ViewBag.Title = "Issue Details Index";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New Issue Details", "Create")
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Issue.EmployeeId)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CpuId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.AgainstDeviceCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceReturnRemarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IssueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReturnComment)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Issue.EmployeeId)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.CpuId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeviceId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.AgainstDeviceCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeviceReturnRemarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnComment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.QueryId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.QueryId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.QueryId })
+            </td>
+        </tr>
+    }
+
+</table>

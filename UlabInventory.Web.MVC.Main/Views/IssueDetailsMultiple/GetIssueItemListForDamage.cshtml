@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Damage Manager For Issue List";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<!-- Content Header (Page header) -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">List of Issed Item</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="issueItemProcessingList" class="table table-responsive table-bordered">
+                        <thead>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+<!-- Add the sidebar's background. This div must be placed
+immediately after the control sidebar -->
+<div class="control-sidebar-bg"></div>
+<div id="divLoading" style="margin: 0px; padding: 0px; position: fixed; right: 0px; top: 0px; width: 100%; height: 100%; background-color: #666666; z-index: 30001; opacity: .8; filter: alpha(opacity=70); display: none">
+    <p style="position: absolute; top: 30%; left: 45%; color: White;">
+        Saving Item Status, please wait...<img src="~/Image/AjaxImg/ajax-loader.gif" />
+    </p>
+</div>
+<!-- ./wrapper -->
+@*<script src="../App/alumniIdCardProcessController.js"></script>*@
+
+@section Scripts {
+
+    <script src="../App/issueItemDatatableForDamage.js"></script>
+
+}
+
+
+

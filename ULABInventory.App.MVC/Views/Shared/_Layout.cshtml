@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ULAB Inventory</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Style/CustomStyleSheet.css")
+    
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-7 col-md-7 col-sm-7 col-xs-12 ">
+                <img src="~/Image/ULAB-logo-large.gif" class="img-rounded img-responsive span3 wow flipInX ImhHL" />
+            </div>
+        </div>
+
+
+
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("ULAB Inventory", "Index", "Home", null, new {@class = "navbar-brand"})
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @*<li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+
+
+
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academic Entry<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("School Entry", "Index", "Schools")</li>
+                            <li>@Html.ActionLink("Department Entry", "Index", "Departments")</li>
+                            <li>@Html.ActionLink("Campus Entry", "Index", "Campus")</li>
+                            <li>@Html.ActionLink("Employee Entry", "Index", "Employees")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inventory Setting<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Category", "Index", "Categories")</li>
+                            <li>@Html.ActionLink("Sub-Category", "Index", "SubCategories")</li>
+                            <li>@Html.ActionLink("Item", "Index", "Items")</li>
+                            <li>@Html.ActionLink("Item Details", "Index", "ItemDetails")</li>
+                            <li>@Html.ActionLink("Issue", "Index", "Issues")</li>
+                            <li>@Html.ActionLink("Issue Details", "Index", "IssueDetails")</li>
+                            <li>@Html.ActionLink("Check In", "Index", "CheckIns")</li>
+                            <li>@Html.ActionLink("Check In Details", "Index", "CheckInDetails")</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                    <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - UNIVERSITY OF LIBERAL ARTS BANGLADESH All Rights Reserved  </p>
+    </footer>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+</html>

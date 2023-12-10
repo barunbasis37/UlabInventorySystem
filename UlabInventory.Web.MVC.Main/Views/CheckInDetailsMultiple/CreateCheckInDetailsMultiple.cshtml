@@ -1,0 +1,250 @@
+﻿
+@{
+    ViewBag.Title = "Create Check-In Details.";
+}
+
+<h2>Multiple Item Check In</h2>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<div class="container">
+    <div class="master">
+        <h2>Create Check In Item</h2>
+        <table class="table table-responsive">
+            <tr class="cat-container">
+                <td>
+                    <select id="itemCategory" class="itemC form-control" onchange="LoadSupplier(this)">
+                        <option>Select Category</option>
+                    </select>
+                    <span class="error">Category Name Required</span>
+                </td>
+                <td>
+                    <select id="itemSupplier" class="itemSup form-control">
+                        <option>Select Supplier</option>
+                    </select>
+                    <span class="error">Supplier Required</span>
+                </td>
+                <td>
+                    <input type="text" id="invoiceNo" class="form-control" placeholder="Invoice/Bill No" />
+                    <span class="error">Invoice No Required</span>
+                </td>
+                <td>
+                    <input type="text" id="invoicedatepicker" class="invoicedatepicker form-control" readonly="readonly" placeholder="Invoice Date" />
+                    <span class="error">Valid Invoice date required (ex: MM-dd-yyyy)</span>
+                </td>
+
+            </tr>
+            <tr class="cat-container">
+                <td>
+                    <input type="text" id="workOrderNo" class="form-control" placeholder="Work Order No" />
+                    <span class="error">Work Order No required.</span>
+                </td>
+                <td>
+                    <input type="text" id="receiptNo" class="form-control" placeholder="Purchase No" />
+                    <span class="error">Purchase No required.</span>
+                </td>
+                <td>
+                    <input type="text" id="purchaseDate" class="datepicker form-control" readonly="readonly" placeholder="Purchase Date" />
+                    <span class="error">Valid purchase date required (ex: MM-dd-yyyy)</span>
+                </td>
+                <td>
+                    <input type="text" id="productPrice" class="form-control" placeholder="Product Price" />
+                    <span class="error">Product Price required.</span>
+                </td>
+                <td></td>
+                @*<td>
+                        <input type="text" id="purchaseBy" class="form-control" placeholder="Purchase By"/>
+                        <span class="error">Purchase By required.</span>
+                    </td>*@
+                @*<td colspan="3">
+                        <textarea id="comment" class="form-control" placeholder="Comment"></textarea>
+                    </td>*@
+            </tr>
+        </table>
+    </div>
+    <div class="details">
+        <h2>Include in CPU :</h2>
+        <div class="col col-md-12">
+            <table class="table table-responsive table-warning">
+                <tr>
+                    <td class="col col-md-3">Yes&nbsp; <input id="yesId" name="CheckType" type="radio" value="yes" /></td>
+                    <td class="col col-md-3">No&nbsp; <input id="noId" checked="checked" name="CheckType" type="radio" value="no" /> </td>
+                    <td class="col col-md-3">&nbsp;</td>
+                    <td class="col col-md-3">&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="details">
+        <h2>
+            Check In Item Details
+        </h2>
+
+
+        <table class="table table-responsive table-hover">
+            <tr>
+               
+                @*<th>Device Code</th>*@
+                <th>Product Serial No</th>
+                <th>Warrant(Month)</th>
+                <th>Item Name</th>
+                @*<th>Item Model</th>*@
+                <th>Item Specification</th>
+                @*<th>Item Brand</th>*@
+                <th>Unit Price</th>
+                @*<th>Item Status</th>*@
+                @*<th>Current Status</th>*@
+                <th>Remarks</th>
+                <th>&nbsp;</th>
+            </tr>
+
+
+            <tr class="mycontainer cat-container" id="mainCheckInDetailsrow">
+                @*<td>
+                    <input type="text" id="auditCode" name="auditCode" class="auditCode form-control show" placeholder="Audit Code" onchange="auditCodeCheck()" />
+                    <span class="error">Audit Code required</span><p id="Status" />
+                </td>*@
+                @*<td>
+                        <input type="text" id="deviceCode" class="deviceCode form-control" placeholder="Device Code"/>
+                        <span class="error">Device Code required</span>
+                    </td>*@
+                <td>
+                    <input type="text" id="productSerialNo" class="productSerialNo form-control" placeholder="Product Serial No" />
+                    <span class="error">Product Serial No required</span>
+                </td>
+
+                <td>
+                    <input type="text" id="warrantPeriod" class="warrantPeriod form-control" placeholder="Warrant(Month)" />
+                    <span class="error">Warrant Period required</span>
+                </td>
+                <td>
+                    <select id="itemCName" class="itemCName form-control" onchange="LoadItemModel(this); " class="form-control">
+                        <option>Select Category</option>
+                    </select>
+                    <span class="error">Item Name required</span>
+                </td>
+                <td>
+                    <select id="itemModel" class="itemModel form-control" class="form-control">
+                        <option>Select Item Model</option>
+                    </select>
+                    <span class="error">Item Model required</span>
+                </td>
+                @*LoadItemSize(this); LoadItemBrand(this);*@
+                @*<td>
+                        <select id="itemSize" class="itemSize form-control">
+                            <option>Select Item Specification</option>
+                        </select>
+
+                        <span class="error">Item Specification required</span>
+                    </td>
+                    <td>
+                        <select id="itemBrand" class="itemBrand form-control">
+                            <option>Select Item Brand</option>
+                        </select>
+                        <span class="error">Item Brand required</span>
+                    </td>*@
+                <td>
+                    <input type="text" id="unitPrice" class="unitPrice form-control" placeholder="Unit Price" />
+                    <span class="error">Unit Price required</span>
+                </td>
+
+                @*<td>
+                        <select id="itemStatus" class="itemStatus form-control">
+                            <option id="0">Select Item Status</option>
+                            <option id="New">New</option>
+                            <option id="Old">Old</option>
+                        </select>
+                        <span class="error">Item Status required</span>
+                    </td>*@
+                @*<td>
+                        <input type="text" id="currentStatus" class="currentStatus form-control"/>
+                        <span class="error">Current Status required</span>
+                    </td>*@
+                <td>
+                    <input type="text" id="remarks" class="remarks form-control" placeholder="Remarks" />
+                    <span class="error">Remarks required</span>
+                </td>
+                <td>
+                    <input type="button" id="add" value="add" style="width: 80px" class="btn btn-success"  />
+                </td>
+            </tr>
+        </table>
+        <div id="orderItems">
+            <table class="table table-responsive" id="checkIndetailsStore"></table>
+            <span id="orderItemError" style="color: red"></span>
+        </div>
+        <div style="padding: 10px 0; text-align: right">
+            <input id="submit" type="button" value="Save Item" class="btn btn-warning" style="padding: 10px 20px" />
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+            $('.datepicker').datepicker({
+                dateFormat: 'mm-dd-yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+        //$(function () {
+        //    $('.invoicedatepicker').datepicker({
+        //        dateFormat: 'mm-dd-yy',
+        //        changeMonth: true,
+        //        changeYear: true
+        //    });
+        //})
+    </script>
+    <script>
+
+        $(function () {
+            $('.invoicedatepicker').datepicker({
+                dateFormat: 'mm-dd-yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        })
+    </script>
+    <script src="~/App/checkInController.js"></script>
+
+
+    @*<script>
+        function auditCodeCheck() {
+            $("#Status").html("Checking...");
+
+            $.post("@Url.Action("AuditCodeAvailability", "CheckInDetailsMultiple")",
+                {
+                    userdata: $("#auditCode").val()
+                },
+
+                function (data) {
+                    if (data === 0) {
+                        $("#Status").html('<font color="Green">New Audit Code.</font>');
+                        $("#auditCode").css("border-color", "Green");
+                        document.getElementById("add").disabled = false;
+                        //$('#auditCode').siblings('span.error').css('visibility', 'hidden');
+                    }
+                    else {
+                        $("#Status").html('<font color="Red">Audit Code Already Exist.</font>');
+                        $("#auditCode").css("border-color", "Red");
+                        document.getElementById("add").disabled = true;
+                        //$('#auditCode').siblings('span.error').css('visibility', 'visible');
+                    }
+                });
+        }
+    </script>*@
+    
+    <script type="text/javascript">
+        $(function () {
+            $(".itemCName").select2();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".itemModel").select2();
+        });
+    </script>
+}

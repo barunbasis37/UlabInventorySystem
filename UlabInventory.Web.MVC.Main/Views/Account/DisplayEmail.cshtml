@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Accounts Confirmation";
+}
+<h2>@ViewBag.Title.</h2>
+<div class="login-box-body">
+    <p class="login-box-msg">@ViewBag.Title</p>
+    <b class="text-danger">Please inform user below Instruction;</b>
+    <hr />
+    <ul>
+        <li>Please Login to user email.</li>
+        <li>A verification link has been sent from "ito.support@ulab.edu.bd".</li>
+        <li>Verify user account address by clicking the given link.</li>
+    </ul>
+    <br />
+    <p><a href="@Url.Action("Login","Account")" class="text-center">Log-In</a></p>
+
+</div>

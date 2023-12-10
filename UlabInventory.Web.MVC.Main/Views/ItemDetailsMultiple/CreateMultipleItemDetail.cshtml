@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "CreateMultipleItemDetail";
+}
+
+<h2>Create Multiple Item Details</h2>
+<div class="container">
+    <div class="master">
+        <h2>New Item</h2>
+        <table class="table table-responsive">
+            <tr>
+                <td>Item Name</td>
+                <td>
+                    <div class="tt-container">
+                        <input type="text" id="itemName" name="name" class="form-control"/>
+                    </div>
+
+                    <span class="error">Item Name required</span>
+                </td>
+                <td>Priority</td>
+                <td>
+                    <input type="text" id="priority" class="form-control"/>
+                    <span class="error">Priority Must be integer</span>
+                </td>
+            </tr>
+            <tr class="cat-container">
+                <td>Category</td>
+                <td>
+                    <select id="itemCategory" class="itemC form-control" onchange="LoadSubCategory(this)">
+                        <option>Select</option>
+                    </select>
+                    <span class="error">Select Category</span>
+                </td>
+                <td>Sub-Category</td>
+                <td>
+                    <select id="itemSubCategory" class="itemSC form-control">
+                        <option>Select</option>
+                    </select>
+                    <span class="error">Select SubCategory</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td colspan="3">
+                    <textarea id="description" class="form-control"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="details">
+        <h2>
+            New Item Details
+        </h2>
+        <table class="table table-responsive">
+            <tr>
+                <th>Model</th>
+                <th>Size/Speed</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Remarks</th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr class="mycontainer" id="mainrow">
+                @*<td>
+                    <select id="productCategory" class="pc form-control">
+                        <option>Select</option>
+                    </select>
+                    <span class="error">Select Item</span>
+                   
+                </td>*@
+                <td>
+                    <input type="text" id="model" class="model form-control"/>
+                    <span class="error">Model required</span>
+                </td>
+                <td>
+                    <input type="text" id="size" class="size form-control"/>
+                    <span class="error">Specification required</span>
+                </td>
+                <td>
+                    <input type="text" id="brand" class="brand form-control"/>
+                    <span class="error">Brand required</span>
+                </td>
+                <td>
+                    <input type="text" id="price" class="price form-control"/>
+                    <span class="error">Valid Price required</span>
+                </td>
+                <td>
+                    <input type="text" id="details" class="details form-control"/>
+
+                </td>
+                <td>
+                    <input type="button" id="add" value="add" style="width: 80px" class="btn btn-success"/>
+                </td>
+            </tr>
+        </table>
+        <div id="orderItems">
+            <table class="table table-responsive" id="orderdetailsItems"></table>
+            <span id="orderItemError" style="color: red"></span>
+        </div>
+        <div style="padding: 10px 0; text-align: right">
+            <input id="submit" type="button" value="Save Item" class="btn btn-warning" style="padding: 10px 20px"/>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+ <script src="~/App/itemcontroller.js"></script>   
+}
+
+

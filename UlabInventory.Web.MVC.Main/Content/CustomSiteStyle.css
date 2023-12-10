@@ -1,0 +1,28 @@
+﻿.ImhHL {
+    padding: 2% 2%;
+    max-height: 50px;
+    opacity: 2;
+    -webkit-transition: opacity 500ms ease;
+    transition: opacity 500ms ease;
+}
+
+    .ImhHL:hover {
+        opacity: 0.8;
+    }
+    #nav ul{
+    display : none;
+}
+#nav li:hover > ul{
+    display : block;
+}
+
+span.error {
+        display: block;
+        visibility: hidden;
+        color: red;
+        font-size: 90%;
+    }
+
+    tr.error {
+        background-color: rgba(255,0,0,0.35);
+    }
